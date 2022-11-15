@@ -1,6 +1,7 @@
 package contabancaria.menu;
 
-import contabancaria.model.Conta;
+import contabancaria.model.ContaCorrente;
+import contabancaria.model.ContaPoupanca;
 import contabancaria.util.Cores;
 
 import java.util.Scanner;
@@ -13,11 +14,6 @@ public class Menu {
 
         int opcao;
 
-        Conta c1 = new Conta(1, 123, 1, "Adriana", 1000.0f);
-
-        c1.visualizar();
-        c1.sacar(100.0f);
-        c1.visualizar();
         while (true) {
             System.out.println(Cores.TEXT_YELLOW + Cores.ANSI_BLACK_BACKGROUND + "******************************************************");
             System.out.println("                                                      ");
@@ -28,8 +24,7 @@ public class Menu {
             System.out.println("              1- CRIAR CONTA                          ");
             System.out.println("              2- VER SALDO                            ");
             System.out.println("              3- DADOS DA CONTA                       ");
-            System.out.println("              4- DEPOSITAR                            ");
-            System.out.println("              5- SACAR                                ");
+            System.out.println("              4- SACAR                                ");
             System.out.println("              5- DEPOSITAR                            ");
             System.out.println("              6- TRANSFERIR                           ");
             System.out.println("              7- SAIR                                 ");
@@ -59,9 +54,20 @@ public class Menu {
                     break;
                 case 5:
                     System.out.println("\n Depositar");
+                    ContaCorrente cont = new ContaCorrente(421, 21, 2, "Davi", 2000.0f, 1000.0f);
+
+                    cont.visualizar();
+                    cont.sacar(5000.0f);
+                    cont.depositar(10000.0f);
+
+                    cont.visualizar();
+
+                    ContaPoupanca cp = new ContaPoupanca(2, 123, 2, "Davi", 500.0f, 20);
+                    cp.visualizar();
+
                     break;
                 case 6:
-                    System.out.println("\n Transferir2");
+                    System.out.println("\n Transferir");
                     break;
                 default:
                     System.out.println("\nOpção Inválida");

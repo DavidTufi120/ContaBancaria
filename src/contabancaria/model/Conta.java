@@ -48,7 +48,6 @@ public class Conta {
         this.titular = titular;
     }
 
-   
     public float getSaldo() {
         return this.saldo;
     }
@@ -69,17 +68,35 @@ public class Conta {
 
     }
 
-    public void depositar() {
+    public void depositar(float valor) {
+        try {
+            this.setSaldo(this.getSaldo() + valor);
+            System.out.println("Depositado com sucesso");
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        } finally {
+            System.out.println("Agradecemos a preferência");
+        }
 
     }
 
     public void visualizar() {
+        String tipo = "";
+        switch (this.tipo) {
+            case 1:
+                tipo = "Conta Corrente";
+                break;
+
+            case 2:
+                tipo = "Conta Poupança";
+                break;
+        }
         System.out.println("\n*********************************");
         System.out.println("Dados da conta");
         System.out.println("\n*********************************");
         System.out.println("\nNúmero da conta" + this.numero);
         System.out.println("\nNúmero da agencia" + this.agencia);
-        System.out.println("\nTipo da agencia" + this.tipo);
+        System.out.println("\nTipo da conta" + tipo);
         System.out.println("\nTitular" + this.titular);
         System.out.println("\nSaldo" + this.saldo);
 
@@ -87,10 +104,6 @@ public class Conta {
     }
 
     public static void main(String[] args) {
-
-        Conta conta = new Conta(21, 21, 1, "Davi", 2000.0f);
-
-        System.out.println(conta.getNumero() + "" + conta.getAgencia());
 
     }
 }
