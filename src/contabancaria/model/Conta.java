@@ -17,7 +17,7 @@ public class Conta {
     }
 
     public int getNumero() {
-        return numero;
+        return this.numero;
     }
 
     public void setNumero(int numero) {
@@ -25,7 +25,7 @@ public class Conta {
     }
 
     public int getAgencia() {
-        return agencia;
+        return this.agencia;
     }
 
     public void setAgencia(int agencia) {
@@ -33,7 +33,7 @@ public class Conta {
     }
 
     public int getTipo() {
-        return tipo;
+        return this.tipo;
     }
 
     public void setTipo(int tipo) {
@@ -41,15 +41,16 @@ public class Conta {
     }
 
     public String getTitular() {
-        return titular;
+        return this.titular;
     }
 
     public void setTitular(String titular) {
         this.titular = titular;
     }
 
+   
     public float getSaldo() {
-        return saldo;
+        return this.saldo;
     }
 
     public void setSaldo(float saldo) {
@@ -57,30 +58,30 @@ public class Conta {
     }
 
     public boolean sacar(float valor) {
-        if (getSaldo() < valor) {
+        if (this.getSaldo() < valor) {
             System.out.println("Saldo insuficiente");
             return false;
         }
-        setSaldo(getSaldo() - valor);
+        this.setSaldo(this.getSaldo() - valor);
         System.out.println("Saque efetuado com sucesso");
-        System.out.println("Seu saldo agora é de: " + getSaldo());
+        System.out.println("Seu saldo agora é de: " + this.getSaldo());
         return true;
 
     }
 
     public void depositar() {
-        
+
     }
 
     public void visualizar() {
         System.out.println("\n*********************************");
         System.out.println("Dados da conta");
         System.out.println("\n*********************************");
-        System.out.println("\nNúmero da conta" + numero);
-        System.out.println("\nNúmero da agencia" + agencia);
-        System.out.println("\nTipo da agencia" + tipo);
-        System.out.println("\nTitular" + titular);
-        System.out.println("\nSaldo" + saldo);
+        System.out.println("\nNúmero da conta" + this.numero);
+        System.out.println("\nNúmero da agencia" + this.agencia);
+        System.out.println("\nTipo da agencia" + this.tipo);
+        System.out.println("\nTitular" + this.titular);
+        System.out.println("\nSaldo" + this.saldo);
 
 
     }
